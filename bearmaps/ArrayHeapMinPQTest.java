@@ -2,10 +2,75 @@ package bearmaps;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import edu.princeton.cs.algs4.Stopwatch;
 
 public class ArrayHeapMinPQTest {
     @Test
-    public void testBasic(){
+    public void testAdd(){
+        Stopwatch sw = new Stopwatch();
+        ArrayHeapMinPQ a = new ArrayHeapMinPQ();
+        for(int i = 0 ; i < 5000;i++){
+            a.add(i,i);
+        }
+        //assertEquals(6,a.size());
+        System.out.println("Total time elapsed: " + sw.elapsedTime() +  " seconds.");
+
+    }
+    @Test
+    public void testSmallest(){
+        ArrayHeapMinPQ a = new ArrayHeapMinPQ();
+        //assertEquals("t1",a.getSmallest());
+        Stopwatch sw = new Stopwatch();
+        for(int i = 0 ; i < 5000;i++){
+            a.add(i,i);
+        }
+        a.getSmallest();
+        //assertEquals(6,a.size());
+        System.out.println("Total time elapsed: " + sw.elapsedTime() +  " seconds.");
+    }
+    @Test
+    public void testLeftRight(){
+        ArrayHeapMinPQ a = new ArrayHeapMinPQ();
+        a.add("t1",1);
+        a.add("t2",2);
+        a.add("t3",3);
+        assertEquals(1,a.leftChild(0));
+        assertEquals(2,a.rightChild(0));
+
+    }
+
+    @Test
+    public void testRemoveSmallest(){
+        ArrayHeapMinPQ a = new ArrayHeapMinPQ();
+//        assertEquals("t1",a.removeSmallest());
+//        assertEquals(6,a.size());
+        Stopwatch sw = new Stopwatch();
+        for(int i = 0 ; i < 5000;i++){
+            a.add(i,i);
+        }
+        for(int i = 0 ; i < a.size();i++){
+            a.removeSmallest();
+        }
+        System.out.println("Total time elapsed: " + sw.elapsedTime() +  " seconds.");
+
+    }
+    @Test
+    public void testChangePriority(){
+        ArrayHeapMinPQ a = new ArrayHeapMinPQ();
+        a.add(1,1);
+        a.add(2,2);
+        a.add(3,3);
+
+        assertEquals(1,a.getSmallest());
+        a.changePriority(1,5);
+        assertEquals(2,a.getSmallest());
+        a.changePriority(2,10);
+        assertEquals(3,a.getSmallest());
+
+    }
+
+    @Test
+    public void testPrint(){
         ArrayHeapMinPQ a = new ArrayHeapMinPQ();
         a.add(1,1);
         a.add(2,2);
@@ -13,15 +78,9 @@ public class ArrayHeapMinPQTest {
         a.add(4,4);
         a.add(5,5);
         a.add(6,6);
-        assertEquals(0,a.parent(1));
-        assertEquals(1,a.getSmallest());
-        assertEquals(false,a.contains(7));
-        assertEquals(true, a.contains(3));
-//        for(int i = (a.size()/2)-1;i>=0;i--){
-//            System.out.println("size is "+ a.size());
-//            a.minHeapify(i);
-//        }
-        a.print();
+        a.add(9,7);
 
+        a.print(a.size());
     }
+
 }

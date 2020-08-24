@@ -7,35 +7,67 @@ import java.util.NoSuchElementException;
 
 public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
     private ArrayList<PriorityNode> items; //= new ArrayList<PriorityNode>();
-    private Map<Object,Object> hashMap;// = new HashMap<Object,Object>(); //generic map takes in Priority Node and pos
+    private Map<T,Integer> hashMap;// = new HashMap<Object,Object>(); //generic map takes in Priority Node and pos
     private int size;
     /* Adds an item with the given priority value. Throws an
      * IllegalArgumentExceptionb if item is already present.
      * You may assume that item is never null. */
     ArrayHeapMinPQ(){
         items = new ArrayList<PriorityNode>();
-        hashMap = new HashMap<Object,Object>();
+        hashMap = new HashMap<T,Integer>();
     }
     @Override
     public void add(T item, double priority){
-        if(hashMap.containsKey(new PriorityNode(item,priority))){
+        if(contains(item)){
             throw new IllegalArgumentException("Cannot add. "+item+ " exists");
         }else{
             items.add(new PriorityNode(item,priority));
             System.out.print(items.get(items.size()-1).getItem()+"\n");
-            hashMap.put(items.get(items.size()-1).getItem(),size());
+            hashMap.put(item,size()-1);
+            swim(size()-1);
         }
 
-
+    }
+    /*swimming the min node up*/
+    private void swim(int i){
+        if(i<=1) return;
+        else{
+            int indexParent = parent(i);
+            PriorityNode currentNode = items.get(i);
+            PriorityNode parentNode = items.get(indexParent);
+            if(currentNode.getPriority()<parentNode.getPriority()){
+                swap(currentNode,parentNode);
+                swim(indexParent);
+            }
+        }
+    }
+    private int findMinNode(int parentIndex){
+        int minIndex = parentIndex;
+        int l = leftChild(parentIndex);
+        int r = rightChild(parentIndex);
+        if(l<=size()-1
+                && items.get(l).getPriority() < items.get(minIndex).getPriority()){
+            minIndex = l;
+        }
+        if(r<=size()-1
+                && items.get(r).getPriority() < items.get(minIndex).getPriority()){
+            minIndex = r;
+        }
+        return minIndex;
+    }
+    /*to use in replacing smallest AKA sink-down operation*/
+    private void sink(int current){
+        int toSink = findMinNode(current);
+        if(toSink!=current){
+            swap(items.get(current),items.get(toSink));
+            sink(toSink);
+        }
     }
 
     /* Returns true if the PQ contains the given item. */
     @Override
     public boolean contains(T item){
-        System.out.print(hashMap.containsKey(item)+"\n");
-
-        if(hashMap.containsKey(item)) return true;
-        else return false;
+        return hashMap.containsKey(item);
     }
     /* Returns the minimum item. Throws NoSuchElementException if the PQ is empty. */
     @Override
@@ -50,8 +82,11 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
         if(size()==0){
             throw new NoSuchElementException("Cannot remove Smallest, PQ is empty");
         }
-        T ret = items.get(0).getItem();
-        /*need to remove */
+        T ret = getSmallest();
+        swap(items.get(0),items.get(size()-1));
+        items.set(size()-1,null);
+        hashMap.remove(ret);
+        sink(0);
         return ret;
     }
     /* Returns the number of items in the PQ. */
@@ -65,45 +100,18 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
     @Override
     public void changePriority(T item, double priority){
         if(contains(item)){
-            int pos = (int)hashMap.get(item);
-            items.get(pos).setPriority(priority);
-
-
+            int pos = hashMap.get(item);
+            PriorityNode current = items.get(pos);
+            if(priority > current.getPriority()){
+                current.setPriority(priority);
+                sink(pos);
+            }else if(priority < current.getPriority()){
+                current.setPriority(priority);
+                swim(pos);
+            }
         }else throw new NoSuchElementException("Cannot change "+ item +" priority.");
     }
 
-
-    /*returns true if passed node is a leaf node*/
-    public boolean isLeaf(int pos){
-        if (pos >= (size() / 2) && pos <= size()) {
-            return true;
-        }
-        return false;
-    }
-    /*reheap*/
-    public void minHeapify(int k){
-        if(!isLeaf(k)){
-            System.out.println();
-            if(items.get(k).compareTo(items.get(leftChild(k)))>0
-                    || items.get(k).compareTo(items.get(rightChild(k)))>0){
-                if(items.get(leftChild(k)).compareTo(items.get(rightChild(k)))<0){
-                    swap(items.get(leftChild(k)).getItem(),items.get(k).getItem());
-                    minHeapify(leftChild(k));
-                }else{
-                    swap(items.get(k).getItem(),items.get(rightChild(k)).getItem());
-                    minHeapify((rightChild(k)));
-                }
-            }
-        }
-    }
-//    // Function to build the min heap using
-//    // the minHeapify
-//    public void minHeap()
-//    {
-//        for (int pos = (size() / 2); pos >= 1; pos--) {
-//            minHeapify(pos);
-//        }
-//    }
     /*return parent pos of children*/
     public int parent(int pos){
         return (pos-1)/2;
@@ -118,24 +126,34 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
         return (pos*2)+2;
     }
     /* swap two items*/
-    public void swap(T item1,T item2){
-        int pos1 = (int)hashMap.get(item1);
-        int pos2 = (int)hashMap.get(item2);
-        items.set(pos1,new PriorityNode(item2,items.get(pos1).getPriority()));
-        items.set(pos2,new PriorityNode(item1,items.get(pos2).getPriority()));
-        hashMap.replace(item1,pos2);
-        hashMap.replace(item2,pos1);
+    public void swap(PriorityNode item1,PriorityNode item2){
+        if(item1 == null || item2 == null) return;
+        int item1Index = hashMap.get(item1.getItem());
+        int item2Index = hashMap.get(item2.getItem());
+        PriorityNode tmp = item1;
+        items.set(item1Index,item2);
+        items.set(item2Index,tmp);
+        hashMap.replace((T)item2.getItem(),item1Index);
+        hashMap.replace((T)item1.getItem(),item2Index);
+
     }
-    public void print()
-    {
-        //System.out.print("hello");
-        for (int i = 0; i < size() / 2; i++) {
-            System.out.println("i is "+i);
-            System.out.print(" PARENT : " + items.get(parent(i)).getItem()
-                    + " LEFT CHILD : " + items.get(leftChild(i)).getItem()
-                    + " RIGHT CHILD :" + items.get(rightChild(i)).getItem());
-            System.out.println();
+//    public void print()
+//    {
+//        //System.out.print("hello");
+//        for (int i = 0; i < size()/ 2; i++) {
+//            System.out.print(" PARENT : " + items.get(parent(i)).getItem()
+//                    + " LEFT CHILD : " + items.get(leftChild(i)).getItem()
+//                    + " RIGHT CHILD :" + items.get(rightChild(i)).getItem());
+//            System.out.println();
+//        }
+//    }
+    public void print(int current) {
+        int toSink = findMinNode(current);
+        if(toSink!=current){
+            System.out.println(items.get(current).getItem());
+            print(toSink);
         }
+
     }
     private class PriorityNode implements Comparable<PriorityNode> {
         private T item;

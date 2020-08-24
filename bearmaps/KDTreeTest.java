@@ -9,19 +9,18 @@ public class KDTreeTest {
     private static KDTree buildLectureTree(){
         Point p1 = new Point(2,3);
         Point p2 = new Point(4,2);
-        Point p3 = new Point(4,2);
-        Point p4 = new Point(4,5);
-        Point p5 = new Point(3,3);
-        Point p6 = new Point(1,5);
-        Point p7 = new Point(4,4);
-        KDTree kd = new KDTree(List.of(p1,p2,p3,p4,p5,p6,p7));
+        Point p3 = new Point(4,5);
+        Point p4 = new Point(3,3);
+        Point p5 = new Point(1,5);
+        Point p6 = new Point(4,4);
+        KDTree kd = new KDTree(List.of(p1,p2,p3,p4,p5,p6));
         return kd;
     }
     private static void buildTreeWithDoubles(){
         Point p1 = new Point(2,3);
         Point p2 = new Point(2,3);
         KDTree kd = new KDTree(List.of(p1,p2));
-
+        System.out.println(kd.size());
     }
     @Test
     public void testNearest(){
@@ -55,5 +54,8 @@ public class KDTreeTest {
             Point actual = kd.nearest(p.getX(),p.getY());
             assertEquals(expected,actual);
         }
+    }
+    @Test public void callBuildTreeWithDoubles(){
+        buildTreeWithDoubles();
     }
 }

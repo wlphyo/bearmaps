@@ -35,7 +35,8 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
             int indexParent = parent(i);
             PriorityNode currentNode = items.get(i);
             PriorityNode parentNode = items.get(indexParent);
-            if(currentNode.getPriority()<parentNode.getPriority()){
+            if(Double.compare(currentNode.getPriority(),
+                    parentNode.getPriority())<0){ //currentNode.getPriority()<parentNode.getPriority()
                 swap(currentNode,parentNode);
                 swim(indexParent);
             }
@@ -45,12 +46,14 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
         int minIndex = parentIndex;
         int l = leftChild(parentIndex);
         int r = rightChild(parentIndex);
+        //items.get(l).getPriority() < items.get(minIndex).getPriority()
         if(l<=size()-1
-                && items.get(l).getPriority() < items.get(minIndex).getPriority()){
+                && Double.compare(items.get(l).getPriority(),items.get(minIndex).getPriority())<0){
             minIndex = l;
         }
+        //items.get(r).getPriority() < items.get(minIndex).getPriority()
         if(r<=size()-1
-                && items.get(r).getPriority() < items.get(minIndex).getPriority()){
+                && Double.compare(items.get(r).getPriority(),items.get(minIndex).getPriority())<0){
             minIndex = r;
         }
         return minIndex;
@@ -102,10 +105,10 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
         if(contains(item)){
             int pos = hashMap.get(item);
             PriorityNode current = items.get(pos);
-            if(priority > current.getPriority()){
+            if(Double.compare(priority,current.getPriority())>0){ //priority > current.getPriority()
                 current.setPriority(priority);
                 sink(pos);
-            }else if(priority < current.getPriority()){
+            }else if(Double.compare(priority,current.getPriority())<0){ //priority < current.getPriority()
                 current.setPriority(priority);
                 swim(pos);
             }
@@ -137,16 +140,7 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
         hashMap.replace((T)item1.getItem(),item2Index);
 
     }
-//    public void print()
-//    {
-//        //System.out.print("hello");
-//        for (int i = 0; i < size()/ 2; i++) {
-//            System.out.print(" PARENT : " + items.get(parent(i)).getItem()
-//                    + " LEFT CHILD : " + items.get(leftChild(i)).getItem()
-//                    + " RIGHT CHILD :" + items.get(rightChild(i)).getItem());
-//            System.out.println();
-//        }
-//    }
+
     public void print(int current) {
         int toSink = findMinNode(current);
         if(toSink!=current){

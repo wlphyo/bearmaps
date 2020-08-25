@@ -11,10 +11,8 @@ public class KDTree implements PointSet {
         private boolean orientation;
         private Point point;
         private Node left, right; /*left is down child and right is up child*/
-       // private int size;
         public Node(Point p, boolean o){
             point = p;
-           // size = 1;
             left = right = null;
             orientation = o;
         }
@@ -47,14 +45,7 @@ public class KDTree implements PointSet {
     public int size(){
         return pointHash.size();
     }
-//    private int size(Node x){
-//        if(x==null) return 0;
-//        return x.size;
-//    }
 
-    private void insert(Point p){
-
-    }
     /*compare two points based on their orientation*/
     private int comparePoints(Point a,Point b, boolean o){
         if(o == horizontal){
@@ -76,13 +67,64 @@ public class KDTree implements PointSet {
         return n;
     }
     public Node nearest(Node n,Point goal, Node best){
+//        if(n== null) return best;
+//        if(n.distance(goal) < best.distance(goal)) best = n;
+//        best = nearest(n.left,goal,best);
+//        best = nearest(n.right,goal,best);
+//        return best;
+
         if(n== null) return best;
-        if(n.distance(goal) < best.distance(goal)) best = n;
-        best = nearest(n.left,goal,best);
-        best = nearest(n.right,goal,best);
+        if(Double.compare(n.distance(goal),best.distance(goal))<0) best = n;
+        Node goodSide, badSide;
+        /*if goal is less than n*/
+        if(cmpNodeAndPoint(goal,n)){
+            goodSide = n.left;
+            badSide = n.right;
+        }else{
+            goodSide = n.right;
+            badSide = n.left;
+        }
+        best = nearest(goodSide,goal,best);
+        best = pruningRule(n,goal,best,badSide);
         return best;
+    }
+    /*bad side might have good points*/
+    /*good sources:
+    * https://sp19.datastructur.es/materials/discussion/disc09sol.pdf
+    * https://www.youtube.com/watch?v=ivdmGcZo6U8
+    * */
+    private Node pruningRule(Node n,Point goal, Node best, Node badSide){
+        if(n.orientation == horizontal){
+            /*splitting plane, split on x*/
+            Point horizontalPoint = new Point(n.xNode(),goal.getY()); //page 8 of pdf source
+            Node tmp = new Node(horizontalPoint,false); //orientation should not matter
+            /*if distance from query point is less than splitting plan (horizontalPoint),
+            * visit badSide.
+            * */
+            if(Double.compare(tmp.distance(goal),best.distance(goal))<0){
+                best = nearest(badSide,goal,best);
+            }
+            return best;
+        }else if(n.orientation == vertical){
+            Point verticalPoint = new Point(goal.getX(),n.yNode());
+            Node tmp = new Node(verticalPoint,true); //orientation should not matter
+            if(Double.compare(tmp.distance(goal),best.distance(goal))<0){
+                best = nearest(badSide,goal,best);
+            }
+            return best;
+        }else throw new Error("pruningRule function is producing an error.");
+    }
+    /*to compare Point goal and Node n's point*/
+    private boolean cmpNodeAndPoint(Point p,Node n){
+        if(n.orientation == horizontal){
+            return Double.compare(p.getX(),n.point.getX()) > 0;
+        }else if(n.orientation == vertical){
+            return Double.compare(p.getY(),n.point.getY()) > 0;
+        }else throw new Error("cmpNodeAndPoint is producing an error.");
     }
     public Point nearest(double x1, double y1){
         return nearest(root, new Point(x1,y1),root).point;
     }
+
+
 }

@@ -23,7 +23,7 @@ public class NaivePointSet implements PointSet {
         }
         double currentSmall = dist.get(0);
         for(int i = 0; i < dist.size();i++){
-            if(currentSmall>dist.get(i)) {
+            if(Double.compare(currentSmall,dist.get(i))>0) {
                 currentSmall =dist.get(i);
                 pos = i;
             }

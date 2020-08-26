@@ -27,10 +27,7 @@
       <change beforePath="$PROJECT_DIR$/../proj1b/TestOffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/TestOffByOne.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../proj1b/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/TestPalindrome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bearmaps/KDTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/KDTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bearmaps/KDTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/KDTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2ab/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2ab/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2ab/bearmaps/KDTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2ab/bearmaps/KDTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bearmaps/ArrayHeapMinPQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/ArrayHeapMinPQTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +54,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="JUnit.KDTreeTest.testWith10000PointsAnd2000Queries">
+  <component name="RunManager" selected="JUnit.ArrayHeapMinPQTest.testAdd2">
+    <configuration name="ArrayHeapMinPQTest.testAdd2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj2ab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bearmaps.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bearmaps" />
+      <option name="MAIN_CLASS_NAME" value="bearmaps.ArrayHeapMinPQTest" />
+      <option name="METHOD_NAME" value="testAdd2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KDTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj2ab" />
       <extension name="coverage">
@@ -69,6 +82,22 @@
       <option name="PACKAGE_NAME" value="bearmaps" />
       <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KDTreeTest.CompareTimingOfNaiveVsKdTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj2ab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bearmaps.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bearmaps" />
+      <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
+      <option name="METHOD_NAME" value="CompareTimingOfNaiveVsKdTree" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,45 +134,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KDTreeTest.testWith10000PointsAnd2000Queries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj2ab" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bearmaps.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bearmaps" />
-      <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
-      <option name="METHOD_NAME" value="testWith10000PointsAnd2000Queries" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KDTreeTest.testWith100Points" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj2ab" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bearmaps.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bearmaps" />
-      <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
-      <option name="METHOD_NAME" value="testWith100Points" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.KDTreeTest.testWith10000PointsAnd2000Queries" />
+        <item itemvalue="JUnit.ArrayHeapMinPQTest.testAdd2" />
+        <item itemvalue="JUnit.KDTreeTest.CompareTimingOfNaiveVsKdTree" />
+        <item itemvalue="JUnit.KDTreeTest" />
         <item itemvalue="JUnit.KDTreeTest.callBuildTreeWithDoubles" />
         <item itemvalue="JUnit.KDTreeTest.testNearest" />
-        <item itemvalue="JUnit.KDTreeTest" />
-        <item itemvalue="JUnit.KDTreeTest.testWith100Points" />
       </list>
     </recent_temporary>
   </component>
@@ -171,69 +168,69 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1212" height="310" key="GridCell.Tab.0.bottom" timestamp="1598379394496">
+    <state width="1232" height="153" key="GridCell.Tab.0.bottom" timestamp="1598388237076">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.0.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598379394496" />
+    <state width="1232" height="153" key="GridCell.Tab.0.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598388237076" />
     <state width="2380" height="228" key="GridCell.Tab.0.bottom/0.27.2560.988@0.27.2560.988" timestamp="1598088235794" />
     <state width="862" height="228" key="GridCell.Tab.0.bottom/0.27.958.911@0.27.958.911" timestamp="1598039723236" />
-    <state width="1212" height="310" key="GridCell.Tab.0.center" timestamp="1598379394496">
+    <state width="1232" height="153" key="GridCell.Tab.0.center" timestamp="1598388237075">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.0.center/0.27.1278.979@0.27.1278.979" timestamp="1598379394496" />
+    <state width="1232" height="153" key="GridCell.Tab.0.center/0.27.1278.979@0.27.1278.979" timestamp="1598388237075" />
     <state width="2380" height="228" key="GridCell.Tab.0.center/0.27.2560.988@0.27.2560.988" timestamp="1598088235794" />
     <state width="862" height="228" key="GridCell.Tab.0.center/0.27.958.911@0.27.958.911" timestamp="1598039723233" />
-    <state width="1212" height="310" key="GridCell.Tab.0.left" timestamp="1598379394496">
+    <state width="1232" height="153" key="GridCell.Tab.0.left" timestamp="1598388237075">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.0.left/0.27.1278.979@0.27.1278.979" timestamp="1598379394496" />
+    <state width="1232" height="153" key="GridCell.Tab.0.left/0.27.1278.979@0.27.1278.979" timestamp="1598388237075" />
     <state width="2380" height="228" key="GridCell.Tab.0.left/0.27.2560.988@0.27.2560.988" timestamp="1598088235794" />
     <state width="862" height="228" key="GridCell.Tab.0.left/0.27.958.911@0.27.958.911" timestamp="1598039723233" />
-    <state width="1212" height="310" key="GridCell.Tab.0.right" timestamp="1598379394496">
+    <state width="1232" height="153" key="GridCell.Tab.0.right" timestamp="1598388237076">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.0.right/0.27.1278.979@0.27.1278.979" timestamp="1598379394496" />
+    <state width="1232" height="153" key="GridCell.Tab.0.right/0.27.1278.979@0.27.1278.979" timestamp="1598388237076" />
     <state width="2380" height="228" key="GridCell.Tab.0.right/0.27.2560.988@0.27.2560.988" timestamp="1598088235794" />
     <state width="862" height="228" key="GridCell.Tab.0.right/0.27.958.911@0.27.958.911" timestamp="1598039723233" />
-    <state width="1212" height="310" key="GridCell.Tab.1.bottom" timestamp="1598379394497">
+    <state width="1232" height="442" key="GridCell.Tab.1.bottom" timestamp="1598386840313">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.1.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598379394497" />
+    <state width="1232" height="442" key="GridCell.Tab.1.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598386840313" />
     <state width="1833" height="313" key="GridCell.Tab.1.bottom/0.27.2560.988@0.27.2560.988" timestamp="1597956399945" />
-    <state width="1212" height="310" key="GridCell.Tab.1.center" timestamp="1598379394497">
+    <state width="1232" height="442" key="GridCell.Tab.1.center" timestamp="1598386840313">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.1.center/0.27.1278.979@0.27.1278.979" timestamp="1598379394497" />
+    <state width="1232" height="442" key="GridCell.Tab.1.center/0.27.1278.979@0.27.1278.979" timestamp="1598386840313" />
     <state width="1833" height="313" key="GridCell.Tab.1.center/0.27.2560.988@0.27.2560.988" timestamp="1597956399945" />
-    <state width="1212" height="310" key="GridCell.Tab.1.left" timestamp="1598379394497">
+    <state width="1232" height="442" key="GridCell.Tab.1.left" timestamp="1598386840313">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.1.left/0.27.1278.979@0.27.1278.979" timestamp="1598379394497" />
+    <state width="1232" height="442" key="GridCell.Tab.1.left/0.27.1278.979@0.27.1278.979" timestamp="1598386840313" />
     <state width="1833" height="313" key="GridCell.Tab.1.left/0.27.2560.988@0.27.2560.988" timestamp="1597956399944" />
-    <state width="1212" height="310" key="GridCell.Tab.1.right" timestamp="1598379394497">
+    <state width="1232" height="442" key="GridCell.Tab.1.right" timestamp="1598386840313">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.1.right/0.27.1278.979@0.27.1278.979" timestamp="1598379394497" />
+    <state width="1232" height="442" key="GridCell.Tab.1.right/0.27.1278.979@0.27.1278.979" timestamp="1598386840313" />
     <state width="1833" height="313" key="GridCell.Tab.1.right/0.27.2560.988@0.27.2560.988" timestamp="1597956399945" />
-    <state width="1212" height="310" key="GridCell.Tab.2.bottom" timestamp="1598379394498">
+    <state width="1232" height="442" key="GridCell.Tab.2.bottom" timestamp="1598386840314">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.2.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598379394498" />
+    <state width="1232" height="442" key="GridCell.Tab.2.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598386840314" />
     <state width="1833" height="313" key="GridCell.Tab.2.bottom/0.27.2560.988@0.27.2560.988" timestamp="1597956399946" />
-    <state width="1212" height="310" key="GridCell.Tab.2.center" timestamp="1598379394498">
+    <state width="1232" height="442" key="GridCell.Tab.2.center" timestamp="1598386840314">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.2.center/0.27.1278.979@0.27.1278.979" timestamp="1598379394498" />
+    <state width="1232" height="442" key="GridCell.Tab.2.center/0.27.1278.979@0.27.1278.979" timestamp="1598386840314" />
     <state width="1833" height="313" key="GridCell.Tab.2.center/0.27.2560.988@0.27.2560.988" timestamp="1597956399945" />
-    <state width="1212" height="310" key="GridCell.Tab.2.left" timestamp="1598379394498">
+    <state width="1232" height="442" key="GridCell.Tab.2.left" timestamp="1598386840314">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.2.left/0.27.1278.979@0.27.1278.979" timestamp="1598379394498" />
+    <state width="1232" height="442" key="GridCell.Tab.2.left/0.27.1278.979@0.27.1278.979" timestamp="1598386840314" />
     <state width="1833" height="313" key="GridCell.Tab.2.left/0.27.2560.988@0.27.2560.988" timestamp="1597956399945" />
-    <state width="1212" height="310" key="GridCell.Tab.2.right" timestamp="1598379394498">
+    <state width="1232" height="442" key="GridCell.Tab.2.right" timestamp="1598386840314">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1212" height="310" key="GridCell.Tab.2.right/0.27.1278.979@0.27.1278.979" timestamp="1598379394498" />
+    <state width="1232" height="442" key="GridCell.Tab.2.right/0.27.1278.979@0.27.1278.979" timestamp="1598386840314" />
     <state width="1833" height="313" key="GridCell.Tab.2.right/0.27.2560.988@0.27.2560.988" timestamp="1597956399946" />
     <state x="0" y="107" width="1268" height="825" key="new project wizard" timestamp="1598202437111">
       <screen x="0" y="27" width="1278" height="979" />

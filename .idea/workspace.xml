@@ -28,12 +28,7 @@
       <change beforePath="$PROJECT_DIR$/../proj1b/TestPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proj1b/TestPalindrome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bearmaps/ArrayHeapMinPQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/ArrayHeapMinPQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bearmaps/KDTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/KDTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bearmaps/KDTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/KDTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bearmaps/NaivePointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/NaivePointSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2ab/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2ab/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2ab/bearmaps/KDTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2ab/bearmaps/KDTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proj2ab/bearmaps/KDTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proj2ab/bearmaps/KDTreeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bearmaps/ArrayHeapMinPQTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bearmaps/ArrayHeapMinPQTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +55,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="JUnit.KDTreeTest.CompareTimingOfNaiveVsKdTree">
-    <configuration name="KDTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ArrayHeapMinPQTest.testAdd2">
+    <configuration name="ArrayHeapMinPQTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj2ab" />
       <extension name="coverage">
         <pattern>
@@ -70,29 +65,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="bearmaps" />
-      <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KDTreeTest.CompareTimingOfNaiveVsKdTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="proj2ab" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bearmaps.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bearmaps" />
-      <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
-      <option name="METHOD_NAME" value="CompareTimingOfNaiveVsKdTree" />
+      <option name="MAIN_CLASS_NAME" value="bearmaps.ArrayHeapMinPQTest" />
+      <option name="METHOD_NAME" value="testAdd" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KDTreeTest.callBuildTreeWithDoubles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayHeapMinPQTest.testAdd2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj2ab" />
       <extension name="coverage">
         <pattern>
@@ -101,14 +81,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="bearmaps" />
-      <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
-      <option name="METHOD_NAME" value="callBuildTreeWithDoubles" />
+      <option name="MAIN_CLASS_NAME" value="bearmaps.ArrayHeapMinPQTest" />
+      <option name="METHOD_NAME" value="testAdd2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KDTreeTest.testNearest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayHeapMinPQTest.testLeftRight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj2ab" />
       <extension name="coverage">
         <pattern>
@@ -117,14 +97,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="bearmaps" />
-      <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
-      <option name="METHOD_NAME" value="testNearest" />
+      <option name="MAIN_CLASS_NAME" value="bearmaps.ArrayHeapMinPQTest" />
+      <option name="METHOD_NAME" value="testLeftRight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KDTreeTest.timeWithVariousNumbersOfPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ArrayHeapMinPQTest.testPrint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="proj2ab" />
       <extension name="coverage">
         <pattern>
@@ -133,8 +113,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="bearmaps" />
-      <option name="MAIN_CLASS_NAME" value="bearmaps.KDTreeTest" />
-      <option name="METHOD_NAME" value="timeWithVariousNumbersOfPoints" />
+      <option name="MAIN_CLASS_NAME" value="bearmaps.ArrayHeapMinPQTest" />
+      <option name="METHOD_NAME" value="testPrint" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayHeapMinPQTest.testRemoveSmallest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj2ab" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bearmaps.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bearmaps" />
+      <option name="MAIN_CLASS_NAME" value="bearmaps.ArrayHeapMinPQTest" />
+      <option name="METHOD_NAME" value="testRemoveSmallest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.KDTreeTest.CompareTimingOfNaiveVsKdTree" />
-        <item itemvalue="JUnit.KDTreeTest" />
-        <item itemvalue="JUnit.KDTreeTest.callBuildTreeWithDoubles" />
-        <item itemvalue="JUnit.KDTreeTest.testNearest" />
-        <item itemvalue="JUnit.KDTreeTest.timeWithVariousNumbersOfPoints" />
+        <item itemvalue="JUnit.ArrayHeapMinPQTest.testAdd2" />
+        <item itemvalue="JUnit.ArrayHeapMinPQTest.testPrint" />
+        <item itemvalue="JUnit.ArrayHeapMinPQTest.testAdd" />
+        <item itemvalue="JUnit.ArrayHeapMinPQTest.testRemoveSmallest" />
+        <item itemvalue="JUnit.ArrayHeapMinPQTest.testLeftRight" />
       </list>
     </recent_temporary>
   </component>
@@ -174,28 +170,28 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1232" height="153" key="GridCell.Tab.0.bottom" timestamp="1598388237076">
+    <state width="1232" height="157" key="GridCell.Tab.0.bottom" timestamp="1598412303978">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1232" height="153" key="GridCell.Tab.0.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598388237076" />
+    <state width="1232" height="157" key="GridCell.Tab.0.bottom/0.27.1278.979@0.27.1278.979" timestamp="1598412303978" />
     <state width="2380" height="228" key="GridCell.Tab.0.bottom/0.27.2560.988@0.27.2560.988" timestamp="1598088235794" />
     <state width="862" height="228" key="GridCell.Tab.0.bottom/0.27.958.911@0.27.958.911" timestamp="1598039723236" />
-    <state width="1232" height="153" key="GridCell.Tab.0.center" timestamp="1598388237075">
+    <state width="1232" height="157" key="GridCell.Tab.0.center" timestamp="1598412303978">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1232" height="153" key="GridCell.Tab.0.center/0.27.1278.979@0.27.1278.979" timestamp="1598388237075" />
+    <state width="1232" height="157" key="GridCell.Tab.0.center/0.27.1278.979@0.27.1278.979" timestamp="1598412303978" />
     <state width="2380" height="228" key="GridCell.Tab.0.center/0.27.2560.988@0.27.2560.988" timestamp="1598088235794" />
     <state width="862" height="228" key="GridCell.Tab.0.center/0.27.958.911@0.27.958.911" timestamp="1598039723233" />
-    <state width="1232" height="153" key="GridCell.Tab.0.left" timestamp="1598388237075">
+    <state width="1232" height="157" key="GridCell.Tab.0.left" timestamp="1598412303978">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1232" height="153" key="GridCell.Tab.0.left/0.27.1278.979@0.27.1278.979" timestamp="1598388237075" />
+    <state width="1232" height="157" key="GridCell.Tab.0.left/0.27.1278.979@0.27.1278.979" timestamp="1598412303978" />
     <state width="2380" height="228" key="GridCell.Tab.0.left/0.27.2560.988@0.27.2560.988" timestamp="1598088235794" />
     <state width="862" height="228" key="GridCell.Tab.0.left/0.27.958.911@0.27.958.911" timestamp="1598039723233" />
-    <state width="1232" height="153" key="GridCell.Tab.0.right" timestamp="1598388237076">
+    <state width="1232" height="157" key="GridCell.Tab.0.right" timestamp="1598412303978">
       <screen x="0" y="27" width="1278" height="979" />
     </state>
-    <state width="1232" height="153" key="GridCell.Tab.0.right/0.27.1278.979@0.27.1278.979" timestamp="1598388237076" />
+    <state width="1232" height="157" key="GridCell.Tab.0.right/0.27.1278.979@0.27.1278.979" timestamp="1598412303978" />
     <state width="2380" height="228" key="GridCell.Tab.0.right/0.27.2560.988@0.27.2560.988" timestamp="1598088235794" />
     <state width="862" height="228" key="GridCell.Tab.0.right/0.27.958.911@0.27.958.911" timestamp="1598039723233" />
     <state width="1232" height="442" key="GridCell.Tab.1.bottom" timestamp="1598386840313">

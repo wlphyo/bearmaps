@@ -22,7 +22,7 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
             throw new IllegalArgumentException("Cannot add. "+item+ " exists");
         }else{
             items.add(new PriorityNode(item,priority));
-            System.out.print(items.get(items.size()-1).getItem()+"\n");
+           // System.out.print(items.get(items.size()-1).getItem()+"\n");
             hashMap.put(item,size()-1);
             swim(size()-1);
         }
@@ -30,7 +30,7 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
     }
     /*swimming the min node up*/
     private void swim(int i){
-        if(i<=1) return;
+        if(i<=0) return;
         else{
             int indexParent = parent(i);
             PriorityNode currentNode = items.get(i);
@@ -141,11 +141,14 @@ public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
 
     }
 
-    public void print(int current) {
-        int toSink = findMinNode(current);
-        if(toSink!=current){
-            System.out.println(items.get(current).getItem());
-            print(toSink);
+    public void print() {
+//        int toSink = findMinNode(current);
+//        if(toSink!=current){
+//            System.out.println(items.get(current).getItem());
+//            print(toSink);
+//        }
+        for(int i = 0 ; i< items.size();i++){
+            System.out.println(items.get(i).priority);
         }
 
     }

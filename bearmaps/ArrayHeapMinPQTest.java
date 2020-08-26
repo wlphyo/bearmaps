@@ -17,6 +17,29 @@ public class ArrayHeapMinPQTest {
 
     }
     @Test
+    public void testAdd2(){
+        Stopwatch sw = new Stopwatch();
+        ArrayHeapMinPQ a = new ArrayHeapMinPQ();
+        a.add(4,4);
+        a.add(3,3);
+        a.add(6,6);
+        a.add(2,2);
+        a.add(5,5);
+        a.add(1,1);
+        a.add(7,7);
+        a.add(8,8);
+        a.add(10,10);
+        a.add(11,11);
+        a.add(24,24);
+        a.add(15,15);
+        a.print();
+
+
+        //assertEquals(6,a.size());
+        System.out.println("Total time elapsed: " + sw.elapsedTime() +  " seconds.");
+
+    }
+    @Test
     public void testSmallest(){
         ArrayHeapMinPQ a = new ArrayHeapMinPQ();
         //assertEquals("t1",a.getSmallest());
@@ -80,7 +103,7 @@ public class ArrayHeapMinPQTest {
         a.add(6,6);
         a.add(9,7);
 
-        a.print(a.size());
+        a.print();
     }
 
 }
